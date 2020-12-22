@@ -22,13 +22,5 @@
       </li>
     </ul>
   </div>
-  {{- with .Site.Copyright }}
-  <div class="pure-menu pure-menu-horizontal">
-    <ul class="pure-menu-list">
-      <li class="pure-menu-item pure-menu-disabled">
-        &copy; {{ now.Format "2006" }} &mdash; {{ . }}
-      </li>
-    </ul>
-  </div>
-  {{- end }}
 </div>
+{{ replace .Site.Copyright "{year}" now.Year | safeHTML }}
